@@ -1,12 +1,24 @@
 import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  html, body, #root {
+    height: auto;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+`
 
 export const Container = styled.div`
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(90deg, #383838 0%, #000000 81.25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #383838 0%, #000000 81.25%);
+  display: flex;
+  align-items: center;     
+  justify-content: center;
+  padding: 20px;           
+  box-sizing: border-box;
 `;
 
 export const List = styled.ul`
@@ -56,3 +68,29 @@ export const Button = styled.button`
     margin-left: 20px;
 `;
 
+export const ButtonSmall = styled.button`
+    background: #ff4f4f;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:nth-child(3) {
+        background: #52b788; /* botão de editar */
+    }
+`;
+
+export const ButtonIcon = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+
+  &:hover {
+    color: #8052ec;
+    transform: scale(1.1);
+  }
+`;
